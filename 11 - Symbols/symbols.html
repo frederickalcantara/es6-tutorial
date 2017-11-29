@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symbols</title>
+</head>
+<body>
+<script>
+  // Good for naming conflicts
+  const wes = Symbol('Wes'); // It's the 7th data type
+  const person = Symbol('Wes');
+
+  const classRoom = {
+    [Symbol('Mark')]: {grade: 50, gender: 'Male'},
+    [Symbol('Olivia')]: {grade: 80, gender: 'Female'},
+    [Symbol('Olivia')]: {grade: 80, gender: 'Female'},
+  }
+  // Cannot loop over symbols, good for private data as someone can't loop over it
+
+  for(person in classRoom) {
+    console.log(person);
+  }
+
+  const syms = Object.getOwnPropertySymbols(classRoom);
+  // Gives an array of the symbols themselves. Symbols are the property keys
+  const data = syms.map(sym => classRoom[sym])
+  // map over the symbols and return the values of the symbols
+  console.log(data);
+
+</script>
+</body>
+</html>

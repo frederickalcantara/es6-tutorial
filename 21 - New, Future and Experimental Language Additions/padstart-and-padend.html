@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>String padStart and padEnd</title>
+</head>
+
+<body>
+  <script>
+    const strings = ['short', 'medium size', 'this is really really long', 'this is really reall really really really really long'];
+    const longestString = strings.sort(str => str.length).map(str => str.length)[0];
+    strings.forEach(str => console.log(str.padStart(longestString)));
+
+    // padStart and padEnd adds space at the front or end of a string
+    // Good for adding on characters to a string
+  </script>
+</body>
+
+</html>

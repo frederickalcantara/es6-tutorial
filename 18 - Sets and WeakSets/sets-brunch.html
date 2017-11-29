@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brunch with Sets</title>
+</head>
+<body>
+<script>
+  
+  // Set objects are collections of values. You can iterate through the elements of a set in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.
+
+  const brunch = new Set();
+  // as people start coming in
+  brunch.add('wes');
+  brunch.add('Sarah');
+  brunch.add('Simone');
+  //ready to open!
+  const line = brunch.values();
+  console.log(line.next().value);
+  console.log(line.next().value);
+  brunch.add('Heather');
+  brunch.add('Snickers');
+  console.log(line.next().value);
+  console.log(line.next().value);
+  console.log(line.next().value);
+
+</script>
+</body>
+</html>

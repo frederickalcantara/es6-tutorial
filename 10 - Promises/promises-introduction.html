@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promises!</title>
+</head>
+<body>
+<script>
+
+const postPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+// fetch queues up the search and put it inside a post
+
+postPromise
+	.then(data => data.json())
+	// Converts it to json
+	.then(data => { console.log(data) })
+	// Retrieves data
+	.catch((err) => {
+		console.error(err);
+	})
+
+
+</script>
+</body>
+</html>

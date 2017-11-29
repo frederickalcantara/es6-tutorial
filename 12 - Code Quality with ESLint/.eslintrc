@@ -1,0 +1,17 @@
+{
+	"env": {
+		"es6": true,
+		"browser": true
+	},
+	"extends": "airbnb",
+	"rules": {
+		"no-console": 0,
+		"jsx-a11y/href-no-hash": "off",
+    	"jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    	"no-unused-vars": 1,
+    	"arrow-parens": 0,
+    	"eol-last": 0,
+	},
+	"plugins": ["html", "markdown"]
+
+}

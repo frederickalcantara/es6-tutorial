@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Extending Classes</title>
+</head>
+<body>
+<script>
+  class Animal {
+    constructor(name) {
+      //method for creating and initializing an object within a class
+      this.name = name;
+      this.thirst = 100;
+      this.belly = [];
+    }
+    drink() {
+      this.thirst -= 10;
+      return this.thirst;
+    }
+    eat(food) {
+      this.belly.push(food);
+      return this.belly;
+    }
+  }
+
+  class Dog extends Animal {
+    constructor(name, breed) {
+      super(name);
+      // Super inherits everything from the extended object
+      this.breed = breed;
+    }
+    bark() {
+      console.log('Bark bark!');
+    }
+  }
+
+  const rhino = new Animal('Rhiney');
+  const snickers = new Dog('Snickers', 'King Charles');
+
+  // General practice is to not go to 2 or 3 extensions
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Trailing Comma</title>
+</head>
+
+<body>
+  <script>
+    const inventory = {
+      backpacks: 10,
+      jeans: 23,
+      hoodies: 4,
+      shoes: 11
+    };
+
+    // Make a nav for the inventory
+    const nav = Object.keys(inventory).map(item => `<li>${item}</li>`);
+    console.log(nav);
+
+    // Object.keys targets the properties of an object
+
+    // tell us how many values we have
+    const totalInventory = Object.values(inventory).reduce((a, b) => a + b);
+    console.log(totalInventory);
+
+    // Object.values targets the values of an object
+
+    // Print an inventory list with numbers
+    Object.entries(inventory).forEach(pair => {
+      console.log(pair);
+    });
+
+    // Object.entries targets the properties and values of an object individually
+
+    Object.entries(inventory).forEach(([key, val]) => {
+      console.log(key, val);
+    });
+    // This is a way of destructuring objects
+
+    for (const [key, val] of Object.entries(inventory)) {
+      console.log(key);
+      if (key === 'jeans') break;
+    }
+    // This is an iterable (for of). You can break out of it.
+
+  </script>
+</body>
+
+</html>

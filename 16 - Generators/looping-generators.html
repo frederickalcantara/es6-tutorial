@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Looping Generators</title>
+</head>
+<body>
+<script>
+  
+  function* lyrics() {
+    yield `Nothing can stop me, I'm all the way up`;
+    yield `All the way up`;
+    yield `I'm all the way up`;
+    yield `I'm all the way up`;
+    yield `Nothing can stop me, I'm all the way up`;
+  }
+
+  const wayUp = lyrics();
+
+  for (const line of wayUp) {
+    console.log(line);
+  }
+
+</script>
+</body>
+</html>

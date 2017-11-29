@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Object Literal Upgrades</title>
+</head>
+<body>
+<script>
+  const first = 'snickers';
+  const last = 'bos';
+  const age = 2;
+  const breed = 'King Charles Cav';
+  
+  const dog = {
+    firstName: first, 
+    last, 
+    age, 
+    breed,
+    pals: ['Hugo', 'Sunny']
+  };
+  // If the key and value are of the same name then you can just write the name once and it will automatically write in the key of the name and the value of the name
+  //console.log(dog);
+
+  /* const mode = {
+    create() {
+
+    } 
+    create: function () {
+
+    }
+  } */
+
+  // Example above represents the same thing
+  // Creating a colon function is the same as using an open function
+  // Don't use an arrow function when using a method so it doesn't mess with the scope
+
+  const modal = {
+    create(selector) {
+
+    },
+    open(content) {
+
+    },
+    close(goodbye) {
+
+    }
+  }
+  // You can pass in parameters normally like a regular function
+
+  function invertColor(color) {
+    return '#' + ("000000" + (0xFFFFFF ^ parseInt(color.substring(1), 16)).toString(16)).slice(-6); 
+  }
+
+  const key = 'inkColor';
+  const value = '#ffc600';
+
+  const tShirt = {
+    [key]: value,
+    [`${key}Opposite`]: invertColor(value)
+  };
+
+  const keys = ['size', 'color', 'weight'];
+  const values = ['medium', 'red', 100];
+
+  const shirt = {
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+  }
+  console.log(shirt);
+
+</script>
+</body>
+</html>

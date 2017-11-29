@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Extending</title>
+</head>
+<body>
+<script>
+
+  class favTVShows extends Array {
+    constructor(name, ...items) {
+      super(...items);
+      this.name = name;
+    }
+    add(show) {
+      this.push(show);
+    }
+    topRated(limit = 10) {
+      return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0,limit);
+    }
+  }
+  const shows = new favTVShows('Fred\'s Favorite Shows', 
+      { name: 'Power', stars: 8.5 },
+      { name: 'Game of Thrones', stars: 10 },
+      { name: 'Sense8', stars: 9 }, 
+      { name: 'Better Call Saul', stars: 7 }
+    );
+
+  shows.add({ name: 'Defenders', stars: 8 });
+
+</script>
+</body>
+</html>

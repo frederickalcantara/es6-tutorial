@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iterables & Looping</title>
+</head>
+<body>
+
+<script>
+  // Objects are not iterable
+
+  const apple = {
+    color: 'Red',
+    size: 'Medium',
+    weight: 50,
+    sugar: 10
+  };
+
+  for(const prop in apple) {
+    const value = apple[prop];
+    // To get an object value create a variable for it
+    console.log(value, prop);
+  }
+
+  // Use a for in to loop through objects to access keys and values
+
+</script>
+</body>
+</html>

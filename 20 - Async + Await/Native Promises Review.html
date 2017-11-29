@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Native Promises</title>
+</head>
+
+<video controls class="handsome"></video>
+
+<body>
+  <script>
+    // const res = fetch('https//api.github.com/users/frederickalcantara').then(res => {
+    //   return res.json();
+    // }).then(res => {
+    //   console.log(res);
+    // }).catch(err => {
+    //   console.log('Oh no!!');
+    //   console.log(err);
+    // })
+
+    const video = document.querySelector('.handsome');
+
+    navigator.mediaDevices.getUserMedia({video: true}).then(MediaStream => {
+      video.srcObject = MediaStream;
+      video.load();
+      video.play();
+    }).catch(err => {
+      console.log(err);
+    })
+  </script>
+</body>
+
+</html>

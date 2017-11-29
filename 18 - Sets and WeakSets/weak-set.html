@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brunch with Sets</title>
+</head>
+<body>
+<script>
+
+  // weak sets can only contain objects, cannot enumerate or loop over weak sets
+  // There is no iterator on a weak set
+
+  let dog1 = { name: 'Snickers', age: 3 };
+  let dog2 = { name: 'sunny', age: 1 };
+
+  const weakSauce = new WeakSet([dog1, dog2]);
+
+  console.log(weakSauce);
+  dog1 = null;
+  console.log(weakSauce);
+
+  // weak sets do not have a clear function, objects in a weak set are automatically deleted. 
+
+  // Useful for storing a DOM node or a type of object 
+
+</script>
+</body>
+</html>

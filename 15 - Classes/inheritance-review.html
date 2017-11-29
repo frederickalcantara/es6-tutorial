@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inheritance Review</title>
+</head>
+<body>
+<script>
+
+  class Dog {
+    constructor(name, breed) {
+      this.name = name; 
+      this.breed = breed;  
+    }
+    bark() {
+      console.log(`Bark Bark! My name is ${this.name}`);
+    }
+    cuddle() {
+      console.log(`I love you owner!`);
+    }
+    static info() {
+      // static calls are made directly on the class and are not callable on instances of the class. It's generally used to create utility functions
+      console.log('A dog is better than a cat by 10 times');
+    }
+    get description() {
+      return `${this.name} is a ${this.breed} type of dog`;
+    }
+    set nicknames(value) {
+      // binds an object property to a function to be called when there is an attempt to set that property
+      this.nick = value.trim();
+    }
+    get nicknames() {
+      // binds to an object property to a function that will be called when that property is looked up 
+      return this.nick.toUpperCase();
+    }
+  }
+
+  const snickers = new Dog('Snickers', 'King Charles');
+  const sunny = new Dog('Sunny', 'Golden Doodle');
+
+</script>
+</body>
+</html>
